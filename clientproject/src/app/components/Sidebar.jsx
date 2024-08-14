@@ -1,66 +1,96 @@
 import React from 'react';
-import { FaGithub, FaAt, FaHome, FaListAlt, FaEnvelope, FaSearch, FaBook, FaPhone } from 'react-icons/fa';
+import { FaHome, FaListAlt, FaEnvelope, FaSearch, FaBook, FaPhone } from 'react-icons/fa';
 
 const Sidebar = () => (
-  <div className="sidebar w-64 bg-white h-screen p-6 fixed top-0 left-0">
-    <div className="logo mb-4">
-      <img src="/path/to/logo.png" alt="Logo" className="mb-2" />
-      <hr className="border-t-2 border-gray-300 mb-6" />
-    </div>
-    <div className="menu mb-10">
-      <div className="menu-item flex items-center mb-4 cursor-pointer">
-        <FaHome className="mr-2" />
-        <span>Home</span>
+  <div className="sidebar w-64 bg-white h-screen p-4 fixed top-0 left-0 overflow-y-auto">
+    <div className="flex flex-col justify-between h-full">
+      <div>
+        <div className="logo mb-6">
+          <img src="/path/to/logo.png" alt="Logo" className="mb-4" />
+          <hr className="border-t-2 border-gray-300 mb-2" />
+          
+        </div>
+
+        <div className="menu mb-6">
+          <div className="menu-item flex items-center mb-4 cursor-pointer text-gray-600 hover:text-gray-800">
+            <FaHome className="mr-3" />
+            <span>Home</span>
+          </div>
+          <div className="menu-item flex items-center mb-4 cursor-pointer text-gray-600 hover:text-gray-800">
+            <FaListAlt className="mr-3" />
+            <span>Lists</span>
+          </div>
+          <hr className="border-t-2 border-gray-300 mb-2" />
+          <p className="text-gray-500 text-xs">Search</p> {/* Text below the line */}
+        </div>
+
+        <div className="search mb-6">
+          <div className="search-item flex items-center mb-4 cursor-pointer text-gray-600 hover:text-gray-800">
+            <FaEnvelope className="mr-3" />
+            <span>Email Search</span>
+          </div>
+          <div className="search-item flex items-center mb-4 cursor-pointer text-gray-600 hover:text-gray-800">
+            <FaSearch className="mr-3" />
+            <span>Niche Search</span>
+            <button className="ml-auto text-xs text-blue-600 border border-blue-600 rounded px-2 py-1">Upgrade</button> {/* Upgrade Button */}
+          </div>
+          <hr className="border-t-2 border-gray-300 mb-2" />
+          <p className="text-gray-500 text-xs">Support</p> {/* Text below the line */}
+        </div>
+
+        <div className="support mb-6">
+          <div className="support-item flex items-center mb-4 cursor-pointer text-gray-600 hover:text-gray-800">
+            <FaBook className="mr-3" />
+            <span>Docs</span>
+          </div>
+          <div className="support-item flex items-center mb-4 cursor-pointer text-gray-600 hover:text-gray-800">
+            <FaPhone className="mr-3" />
+            <span>Help</span>
+          </div>
+          <div className="support-item flex items-center mb-4 cursor-pointer text-gray-600 hover:text-gray-800">
+            <FaPhone className="mr-3" />
+            <span>Book a Call</span>
+          </div>
+          <hr className="border-t-2 border-gray-300 mb-2" />
+          
+        </div>
       </div>
-      <div className="menu-item flex items-center mb-4 cursor-pointer">
-        <FaListAlt className="mr-2" />
-        <span>Lists</span>
+
+      {/* Trial Limits Section */}
+      <div className="bg-white p-4 rounded-lg shadow-sm mb-6">
+        <div className="flex justify-between items-center mb-4">
+          <h3 className="text-gray-500 text-sm">TRIAL LIMITS</h3>
+          <a href="#" className="text-xs text-blue-600">Usage</a>
+        </div>
+        <div className="flex justify-between text-sm mb-2">
+          <span>Email Credits (ES)</span>
+          <span className="font-bold">2000</span>
+        </div>
+        <div className="flex justify-between text-sm mb-4">
+          <span>Niche Search Credits (NS)</span>
+          <span className="font-bold">100</span>
+        </div>
+        <button className="border border-blue-600 text-blue-600 py-2 rounded-md w-full">
+          Buy more credits
+        </button>
       </div>
-    </div>
-    <div className="search mb-10">
-      <div className="search-item flex items-center mb-4 cursor-pointer">
-        <FaEnvelope className="mr-2" />
-        <span>Email Search</span>
-      </div>
-      <div className="search-item flex items-center mb-4 cursor-pointer">
-        <FaSearch className="mr-2" />
-        <span>Niche Search</span>
-      </div>
-    </div>
-    <div className="support mb-10">
-      <div className="support-item flex items-center mb-4 cursor-pointer">
-        <FaBook className="mr-2" />
-        <span>Docs</span>
-      </div>
-      <div className="support-item flex items-center mb-4 cursor-pointer">
-        <FaPhone className="mr-2" />
-        <span>Help</span>
-      </div>
-      <div className="support-item flex items-center mb-4 cursor-pointer">
-        <FaPhone className="mr-2" />
-        <span>Book a Call</span>
-      </div>
-    </div>
-    <div className="trial-limits p-4 rounded-lg">
-      <div className="flex justify-between mb-4">
-        <span>Email Credits (ES)</span>
-        <span>2000</span>
-      </div>
-      <div className="flex justify-between mb-4">
-        <span>Niche Search Credits (NS)</span>
-        <span>100</span>
-      </div>
-      <button className="w-full bg-blue-500 text-white py-2 rounded mb-4">
-        Buy more credits
-      </button>
-      <div className="trial-end text-center">
-        <span>
-          Your trial ends in: <span className="text-blue-500">7 days</span>
-        </span>
-        <button className="w-full mt-2 bg-blue-500 text-white py-2 rounded">
+
+      {/* Trial End Section */}
+      <div className="bg-blue-900 text-white p-4 rounded-lg text-center">
+        <p>Your trial ends in:</p>
+        <div className="flex justify-center items-center mb-2">
+          <span className="bg-white text-blue-900 text-xs font-semibold py-1 px-2 rounded-full">7 days</span>
+        </div>
+        <button className="bg-white text-blue-900 py-2 rounded-md w-full">
           Select a plan
         </button>
       </div>
+    </div>
+  </div>
+);
+
+export default Sidebar;
+
     </div>
   </div>
 );
