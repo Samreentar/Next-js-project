@@ -17,7 +17,7 @@ const MainContent = () => (
             Book your onboarding call →
           </button>
         </div>
-        <img src="/image.png" alt="Feature Image" className="mt-4 md:mt-0 md:w-1/2 rounded-lg" />
+        <img src="/path/to/image.png" alt="Feature Image" className="mt-4 md:mt-0 md:w-1/2 rounded-lg" />
       </div>
     </div>
     

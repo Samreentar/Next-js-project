@@ -6,7 +6,11 @@ const Sidebar = () => (
     <div className="flex flex-col justify-between h-full">
       <div>
         <div className="logo mb-6">
+<<<<<<< HEAD
           <img src="/logo.png" alt="Logo" className="mb-4" />
+=======
+          <img src="/path/to/logo.png" alt="Logo" className="mb-4" />
+>>>>>>> c9c4064a22fa09cd21ac4d22ba16e120a9e5d7e2
           <hr className="border-t-2 border-gray-300 mb-2" />
           
         </div>
@@ -85,6 +89,12 @@ const Sidebar = () => (
           Select a plan
         </button>
       </div>
+    </div>
+  </div>
+);
+
+export default Sidebar;
+
     </div>
   </div>
 );
